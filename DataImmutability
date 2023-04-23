@@ -1,0 +1,5 @@
+Console.WriteLine("Hello, World!");
+
+int x = 5;
+//x = 6;  --> throws an error
+int y = x + 1;
