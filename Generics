@@ -27,7 +27,7 @@ namespace GenericsNS
             foreach (var item in list)
             {
                 Console.WriteLine($"{item}");
-            }
+            }  
         }
 
         public static void PrintList(List<long> list)
