@@ -12,3 +12,5 @@ decimal CalculateFinancialIndex(int param1, DateTime date, string something)
 }
 
 delegate decimal CalculateFinancialIndexDelegate(int param1, DateTime date, string something);
+
+
