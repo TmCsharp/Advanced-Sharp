@@ -15,3 +15,4 @@ static int Sum(int[] array, int index)
 
     return sum;
 }
+
