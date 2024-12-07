@@ -1,0 +1,80 @@
+﻿using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        List<Person> people = new List<Person>();
+
+        string command;
+
+        while((command = Console.ReadLine()) != "END")
+        {
+            var tokens = command.Split();
+            people.Add(new Person(tokens[0], int.Parse(tokens[1]), tokens[2]));
+        }
+
+        int index = int.Parse(Console.ReadLine()) - 1;
+        Person person = people[index];
+
+        int equalCounter = 0;
+        int nonEqualCounter = 0;
+
+        foreach(var man in people)
+        {
+            if(man.CompareTo(person) == 0)
+            {
+                equalCounter++;
+            }
+            else
+            {
+                nonEqualCounter++;
+            }
+        }
+
+        if(equalCounter > 1)
+        {
+            Console.WriteLine($"{equalCounter} {nonEqualCounter} {equalCounter + nonEqualCounter}");
+        }
+        else
+        {
+            Console.WriteLine("No matches");
+        }
+    }
+}
+
+
+
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+public class Person : IComparable<Person>
+{
+    private string name;
+    private int age;
+    private string town;
+
+    public Person(string name, int age, string town)
+    {
+        this.name = name;
+        this.age = age;
+        this.town = town;
+    }
+
+    public int CompareTo(Person other)
+    {
+        if(this.name.CompareTo(other.name) != 0)
+        {
+            return this.name.CompareTo(other.name);
+        }
+
+        if(this.age.CompareTo(other.age) != 0)
+        {
+            return this.age.CompareTo(other.age);
+        }
+
+        return this.town.CompareTo(other.town);
+    }
+}
