@@ -1,0 +1,88 @@
+﻿using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        SortedSet<Person> byName = new SortedSet<Person>(new NameComparator());
+        SortedSet<Person> byAge = new SortedSet<Person>(new AgeComparator());
+
+        int count = int.Parse(Console.ReadLine());
+
+        for(int i=0; i<count; i++)
+        {
+            string[] input = Console.ReadLine().Split();
+
+            Person person = new Person(input[0], int.Parse(input[1]));
+            byName.Add(person);
+            byAge.Add(person);
+        }
+
+        foreach(var person in byName)
+        {
+            Console.WriteLine(person);
+        }
+
+        foreach(var person in byAge)
+        {
+            Console.WriteLine(person);
+        }
+    }
+}
+
+
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+public class Person
+{
+    public Person(string name, int age)
+    {
+        this.Name = name;
+        this.Age = age;
+    }
+
+    public string Name { get; private set; }
+
+    public int Age { get; private set; }
+
+    public override string ToString()
+    {
+        return $"{Name} {Age}";
+    }
+}
+
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+public class NameComparator : IComparer<Person>
+{
+    public int Compare(Person x, Person y)
+    {
+        if(x.Name.Length.CompareTo(y.Name.Length) != 0)
+        {
+            return x.Name.Length.CompareTo(y.Name.Length);
+        }
+
+        return String.Compare(x.Name.First().ToString(), y.Name.First().ToString(), true);
+    }
+}
+
+
+
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+public class AgeComparator : IComparer<Person>
+{
+    public int Compare(Person x, Person y)
+    {
+        return x.Age.CompareTo(y.Age);
+    }
+}
