@@ -37,6 +37,8 @@ while ((input = Console.ReadLine()) != "Statistics")
     }
 }
 
+
+
 int count = 1;
 
 Console.WriteLine($"The V-Logger has a total of {vloggers.Count} vloggers in its logs.");
