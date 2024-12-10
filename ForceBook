@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 
 SortedDictionary<string, SortedSet<string>> sidesUsers = new();
-
 string command = string.Empty;
 while ((command = Console.ReadLine()) != "Lumpawaroo")
 {
