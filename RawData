@@ -59,6 +59,10 @@ public class Startup
     }
 }
 
+
+
+
+
 ﻿namespace RawData;
 
 public class Tyre
@@ -71,4 +75,22 @@ public class Tyre
 
     public int Age { get; set; }
     public double Pressure { get; set; }
+}
+
+
+
+
+
+﻿namespace RawData;
+
+public class Engine
+{
+    public Engine(int speed, int power)
+    {
+        Speed = speed;
+        Power = power;
+    }
+
+    public int Speed { get; set; }
+    public int Power { get; set; }
 }
