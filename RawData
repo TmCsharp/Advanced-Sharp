@@ -94,3 +94,19 @@ public class Engine
     public int Speed { get; set; }
     public int Power { get; set; }
 }
+
+
+
+
+﻿namespace RawData;
+
+public class Cargo
+{
+    public Cargo(int weight, string type)
+    {
+        Weight = weight;
+        Type = type;
+    }
+    public int Weight { get; set; }
+    public string Type { get; set; }
+}
