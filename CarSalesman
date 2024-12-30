@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace CarSalesman;
 
+
 public class StartUp
 {
     static void Main(string[] args)
@@ -96,6 +97,7 @@ public class StartUp
         return car;
     }
 }
+
 
 
 ﻿using System;
