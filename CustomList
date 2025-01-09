@@ -25,6 +25,10 @@ Console.WriteLine();
 Console.WriteLine();
 Console.WriteLine(list.Count); // == 3
 
+
+
+
+
 ﻿using System;
 
 namespace CustomStructures;
