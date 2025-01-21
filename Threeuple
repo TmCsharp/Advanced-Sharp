@@ -1,0 +1,47 @@
+﻿using System;
+using ThreeupleType;
+
+string[] personTokens = Console.ReadLine()
+    .Split(" ", StringSplitOptions.RemoveEmptyEntries);
+
+string[] drinkTokens = Console.ReadLine()
+    .Split(" ", StringSplitOptions.RemoveEmptyEntries);
+
+string[] bankTokens = Console.ReadLine()
+    .Split(" ", StringSplitOptions.RemoveEmptyEntries);
+
+Threeuple<string, string, string> person =
+    new($"{personTokens[0]} {personTokens[1]}", personTokens[2], string.Join(" ", personTokens[3..]));
+
+Threeuple<string, int, bool> drinks =
+    new(drinkTokens[0], int.Parse(drinkTokens[1]), drinkTokens[2] == "drunk");
+
+Threeuple<string, double, string> bank =
+    new(bankTokens[0], double.Parse(bankTokens[1]), bankTokens[2]);
+
+Console.WriteLine(person);
+Console.WriteLine(drinks);
+Console.WriteLine(bank);
+
+
+
+
+﻿namespace ThreeupleType;
+
+public class Threeuple<T1, T2, T3>
+{
+    public Threeuple(T1 item1, T2 item2, T3 item3)
+    {
+        Item1 = item1;
+        Item2 = item2;
+        Item3 = item3;
+    }
+    public T1 Item1 { get; private set; }
+    public T2 Item2 { get; private set; }
+    public T3 Item3 { get; private set; }
+
+    public override string ToString()
+    {
+        return $"{Item1} -> {Item2} -> {Item3}";
+    }
+}
